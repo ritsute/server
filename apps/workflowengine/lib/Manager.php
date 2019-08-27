@@ -39,7 +39,6 @@ use OCP\WorkflowEngine\IEntity;
 use OCP\WorkflowEngine\IEntityAware;
 use OCP\WorkflowEngine\IManager;
 use OCP\WorkflowEngine\IOperation;
-use OCP\WorkflowEngine\IOperator;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
 
@@ -75,7 +74,7 @@ class Manager implements IManager, IEntityAware {
 	/** @var IEntity[] */
 	protected $registeredEntities = [];
 
-	/** @var IOperator[] */
+	/** @var IOperation[] */
 	protected $registeredOperators = [];
 
 	/** @var ILogger */
@@ -545,16 +544,16 @@ class Manager implements IManager, IEntityAware {
 	 * @return IEntity[]
 	 */
 	public function getEntitiesList(): array {
-		$this->eventDispatcher->dispatch('OCP\WorkflowEngine::registerEntities', new GenericEvent($this));
+		$this->eventDispatcher->dispatch(IManager::EVENT_NAME_REG_ENTITY, new GenericEvent($this));
 
 		return array_merge($this->getBuildInEntities(), $this->registeredEntities);
 	}
 
 	/**
-	 * @return IOperator[]
+	 * @return IOperation[]
 	 */
 	public function getOperatorList(): array {
-		$this->eventDispatcher->dispatch('OCP\WorkflowEngine::registerOperators', new GenericEvent($this));
+		$this->eventDispatcher->dispatch(IManager::EVENT_NAME_REG_OPERATION, new GenericEvent($this));
 
 		return array_merge($this->getBuildInOperators(), $this->registeredOperators);
 	}
@@ -569,8 +568,8 @@ class Manager implements IManager, IEntityAware {
 		$this->registeredEntities[$entity->getId()] = $entity;
 	}
 
-	public function registerOperator(IOperator $operator): void {
-		$this->registeredOperators[$operator->getId()] = $operator;
+	public function registerOperation(IOperation $operator): void {
+		$this->registeredOperators[get_class($operator)] = $operator;
 	}
 
 	/**
@@ -588,7 +587,7 @@ class Manager implements IManager, IEntityAware {
 	}
 
 	/**
-	 * @return IOperator[]
+	 * @return IOperation[]
 	 */
 	protected function getBuildInOperators(): array {
 		try {
