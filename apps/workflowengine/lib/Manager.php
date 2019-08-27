@@ -37,6 +37,7 @@ use OCP\IUserSession;
 use OCP\WorkflowEngine\ICheck;
 use OCP\WorkflowEngine\IEntity;
 use OCP\WorkflowEngine\IEntityAware;
+use OCP\WorkflowEngine\IEntityEvent;
 use OCP\WorkflowEngine\IManager;
 use OCP\WorkflowEngine\IOperation;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -233,7 +234,13 @@ class Manager implements IManager, IEntityAware {
 		throw new \UnexpectedValueException($this->l->t('Operation #%s does not exist', [$id]));
 	}
 
-	protected function insertOperation(string $class, string $name, array $checkIds, string $operation): int {
+	protected function insertOperation(
+		string $class,
+		string $name,
+		array $checkIds,
+		string $operation,
+		array $events
+	): int {
 		$query = $this->connection->getQueryBuilder();
 		$query->insert('flow_operations')
 			->values([
@@ -241,6 +248,7 @@ class Manager implements IManager, IEntityAware {
 				'name' => $query->createNamedParameter($name),
 				'checks' => $query->createNamedParameter(json_encode(array_unique($checkIds))),
 				'operation' => $query->createNamedParameter($operation),
+				'events' => $query->createNamedParameter(json_encode($events))
 			]);
 		$query->execute();
 
@@ -256,8 +264,15 @@ class Manager implements IManager, IEntityAware {
 	 * @throws \UnexpectedValueException
 	 * @throws DBALException
 	 */
-	public function addOperation($class, $name, array $checks, $operation, ScopeContext $scope) {
-		$this->validateOperation($class, $name, $checks, $operation);
+	public function addOperation(
+		string $class,
+		string $name,
+		array $checks,
+		string $operation,
+		ScopeContext $scope,
+		array $events
+	) {
+		$this->validateOperation($class, $name, $checks, $operation, $events);
 
 		$this->connection->beginTransaction();
 
@@ -267,7 +282,7 @@ class Manager implements IManager, IEntityAware {
 				$checkIds[] = $this->addCheck($check['class'], $check['operator'], $check['value']);
 			}
 
-			$id = $this->insertOperation($class, $name, $checkIds, $operation);
+			$id = $this->insertOperation($class, $name, $checkIds, $operation, $events);
 			$this->addScope($id, $scope);
 
 			$this->connection->commit();
@@ -316,12 +331,19 @@ class Manager implements IManager, IEntityAware {
 	 * @throws \DomainException
 	 * @throws DBALException
 	 */
-	public function updateOperation($id, $name, array $checks, $operation, ScopeContext $scopeContext): array {
+	public function updateOperation(
+		int $id,
+		string $name,
+		array $checks,
+		string $operation,
+		ScopeContext $scopeContext,
+		array $events
+	): array {
 		if(!$this->canModify($id, $scopeContext)) {
 			throw new \DomainException('Target operation not within scope');
 		};
 		$row = $this->getOperation($id);
-		$this->validateOperation($row['class'], $name, $checks, $operation);
+		$this->validateOperation($row['class'], $name, $checks, $operation, $events);
 
 		$checkIds = [];
 		try {
@@ -335,6 +357,7 @@ class Manager implements IManager, IEntityAware {
 				->set('name', $query->createNamedParameter($name))
 				->set('checks', $query->createNamedParameter(json_encode(array_unique($checkIds))))
 				->set('operation', $query->createNamedParameter($operation))
+				->set('events', $query->createNamedParameter(json_encode($events)))
 				->where($query->expr()->eq('id', $query->createNamedParameter($id)));
 			$query->execute();
 			$this->connection->commit();
@@ -383,6 +406,30 @@ class Manager implements IManager, IEntityAware {
 		return $result;
 	}
 
+	protected function validateEvents($events) {
+		foreach ($events as $entity => $eventNames) {
+			try {
+				/** @var IEntity $instance */
+				$instance = $this->container->query($entity);
+			} catch (QueryException $e) {
+				throw new \UnexpectedValueException($this->l->t('Entity %s does not exist', [$entity]));
+			}
+
+			if(!$instance instanceof IEntity) {
+				throw new \UnexpectedValueException($this->l->t('Entity %s is invalid', [$entity]));
+			}
+
+			$availableEvents = array_reduce($instance->getEvents(), function(array $carry, IEntityEvent $event) {
+				$carry[] = $event->getEventName();
+			}, []);
+			foreach($eventNames as $event) {
+				if(!in_array($event, $availableEvents, true)) {
+					throw new \UnexpectedValueException($this->l->t('Entity %s has no event %s', [$entity, $event]));
+				}
+			}
+		}
+	}
+
 	/**
 	 * @param string $class
 	 * @param string $name
@@ -390,7 +437,7 @@ class Manager implements IManager, IEntityAware {
 	 * @param string $operation
 	 * @throws \UnexpectedValueException
 	 */
-	protected function validateOperation($class, $name, array $checks, $operation) {
+	protected function validateOperation($class, $name, array $checks, $operation, array $events) {
 		try {
 			/** @var IOperation $instance */
 			$instance = $this->container->query($class);
@@ -401,6 +448,8 @@ class Manager implements IManager, IEntityAware {
 		if (!($instance instanceof IOperation)) {
 			throw new \UnexpectedValueException($this->l->t('Operation %s is invalid', [$class]));
 		}
+
+		$this->validateEvents($events);
 
 		$instance->validateOperation($name, $checks, $operation);
 
