@@ -1005,15 +1005,13 @@ class ShareAPIController extends OCSController {
 			throw new OCSNotFoundException($this->l->t('Wrong share ID, share doesn\'t exist'));
 		}
 
-		if ($share->getShareType() !== Share::SHARE_TYPE_USER ||
-			$share->getSharedWith() !== $this->currentUser) {
-			throw new OCSNotFoundException($this->l->t('Wrong share ID, share doesn\'t exist'));
+		if ($share->getShareType() !== IShare::TYPE_USER &&
+			$share->getShareType() !== IShare::TYPE_GROUP) {
+			throw new OCSNotFoundException($this->l->t('Share type does not support accepting'));
 		}
 
-		$share->setStatus(IShare::STATUS_ACCEPTED);
-
 		try {
-			$this->shareManager->updateShare($share);
+			$this->shareManager->acceptShare($share, $this->currentUser);
 		} catch (GenericShareException $e) {
 			$code = $e->getCode() === 0 ? 403 : $e->getCode();
 			throw new OCSException($e->getHint(), $code);

@@ -928,6 +928,26 @@ class Manager implements IManager {
 	}
 
 	/**
+	 * Accept a share.
+	 *
+	 * @param IShare $share
+	 * @param string $recipientId
+	 * @return IShare The share object
+	 * @throws \InvalidArgumentException
+	 * @since 9.0.0
+	 */
+	public function acceptShare(IShare $share, string $recipientId): IShare {
+		[$providerId, ] = $this->splitFullId($share->getFullId());
+		$provider = $this->factory->getProvider($providerId);
+
+		$provider->acceptShare($share, $recipientId);
+		$event = new GenericEvent($share);
+		$this->eventDispatcher->dispatch('OCP\Share::postAcceptShare', $event);
+
+		return $share;
+	}
+
+	/**
 	 * Updates the password of the given share if it is not the same as the
 	 * password of the original share.
 	 *
