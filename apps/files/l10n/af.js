@@ -31,6 +31,8 @@ OC.L10N.register(
     "Copy" : "Kopieer",
     "Choose target folder" : "Kies teikenvouer",
     "Open" : "Open",
+    "Delete file" : "Skrap lêer",
+    "Delete folder" : "Skrap vouer",
     "Disconnect storage" : "Ontkoppel berging",
     "Unshare" : "Ontdeel",
     "Could not load info for file \"{file}\"" : "Kon nie inligting vir lêer: “{file}” laai nie ",
@@ -128,13 +130,12 @@ OC.L10N.register(
     "Shared by link" : "Gedeel per skakel",
     "Text file" : "Tekslêer",
     "New text file.txt" : "Nuwe tekslêer.txt",
-    "Target folder" : "Teikengids",
     "File handling" : "Lêerhantering",
     "Maximum upload size" : "Maksimum oplaaigrootte",
     "max. possible: " : "maks. moontlik:",
     "Save" : "Stoor",
-    "%s of %s used" : "%s van %s gebruik",
     "Cancel upload" : "Kanselleer oplaai",
+    "%s of %s used" : "%s van %s gebruik",
     "%1$s%% of %2$s used" : "%1$s%% van %2$s gebruik"
 },
 "nplurals=2; plural=(n != 1);");

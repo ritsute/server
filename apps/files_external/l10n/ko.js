@@ -119,6 +119,7 @@ OC.L10N.register(
     "Name" : "이름",
     "Storage type" : "저장소 종류",
     "Scope" : "범위",
+    "Open documentation" : "문서 열기",
     "External storage enables you to mount external storage services and devices as secondary Nextcloud storage devices. You may also allow users to mount their own external storage services." : "외부 저장소를 사용하여 외부 저장소 서비스나 장치를 Nextcloud 이차 저장 장치로 마운트할 수 있습니다. 사용자가 개별 외부 저장소 서비스를 마운트할 수 있도록 허용할 수도 있습니다.",
     "Folder name" : "폴더 이름",
     "External storage" : "외부 저장소",
@@ -129,8 +130,6 @@ OC.L10N.register(
     "Add storage" : "저장소 추가",
     "Advanced settings" : "고급 설정",
     "Allow users to mount external storage" : "사용자가 외부 저장소를 마운트하도록 허용",
-    "Global credentials can be used to authenticate with multiple external storages that have the same credentials." : "전역 인증 정보를 사용하여 같은 인증 정보를 사용하는 여러 외부 저장소에 인증할 수 있습니다.",
-    "Some of the configured external mount points are not connected. Please click on the red row(s) for more information" : "일부 외부 마운트 지점을 연결할 수 없습니다. 빨간색으로 표시된 줄을 눌러서 더 많은 정보를 확인하십시오",
-    "\"%s\" is not installed. Mounting of %s is not possible. Please ask your system administrator to install it." : "\"%s\"이(가) 설치되어 있지 않습니다. %s을(를) 마운트할 수 없습니다. 시스템 관리자에게 설치를 요청하십시오."
+    "Global credentials can be used to authenticate with multiple external storages that have the same credentials." : "전역 인증 정보를 사용하여 같은 인증 정보를 사용하는 여러 외부 저장소에 인증할 수 있습니다."
 },
 "nplurals=1; plural=0;");

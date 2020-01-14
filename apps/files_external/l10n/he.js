@@ -103,6 +103,7 @@ OC.L10N.register(
     "SFTP with secret key login" : "SFTP עם מפתח כניסה סודי",
     "SMB / CIFS" : "SMB / CIFS",
     "Share" : "שיתוף",
+    "Show hidden files" : "הצגת קבצים נסתרים",
     "SMB / CIFS using OC login" : "SMB / CIFS בשימוש עם כניסת OC",
     "Username as share" : "שם משתמש כשיתוף",
     "OpenStack Object Storage" : "אחסון אובייקט OpenStack",
@@ -116,6 +117,7 @@ OC.L10N.register(
     "Name" : "שם",
     "Storage type" : "סוג אחסון",
     "Scope" : "היקף",
+    "Open documentation" : "פתיחת תיעוד",
     "Folder name" : "שם התיקייה",
     "External storage" : "אחסון חיצוני",
     "Authentication" : "אימות",
@@ -124,7 +126,6 @@ OC.L10N.register(
     "Click to recheck the configuration" : "יש ללחוץ כאן כדי לבדוק את ההגדרות מחדש",
     "Add storage" : "הוספת אחסון",
     "Advanced settings" : "הגדרות מתקדמות",
-    "Allow users to mount external storage" : "מאפשר למשתמשים לחבר אחסון חיצוני",
-    "Some of the configured external mount points are not connected. Please click on the red row(s) for more information" : "חלק מנקודות העיגון החיצוניות שהוגדרו אינן מחוברות. יש ללחוץ על השורה/ות האדומה/ות למידע נוסף"
+    "Allow users to mount external storage" : "מאפשר למשתמשים לחבר אחסון חיצוני"
 },
 "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;");

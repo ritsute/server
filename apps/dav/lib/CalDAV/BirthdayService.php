@@ -1,14 +1,14 @@
 <?php
+
 declare(strict_types=1);
+
 /**
  * @copyright Copyright (c) 2016, ownCloud, Inc.
  * @copyright Copyright (c) 2019, Georg Ehrke
  *
  * @author Achim Königs <garfonso@tratschtante.de>
  * @author Georg Ehrke <oc.list@georgehrke.com>
- * @author Joas Schilling <coding@schilljs.com>
  * @author Robin Appelman <robin@icewind.nl>
- * @author Roeland Jago Douma <roeland@famdouma.nl>
  * @author Thomas Müller <thomas.mueller@tmit.eu>
  *
  * @license AGPL-3.0
@@ -23,7 +23,7 @@ declare(strict_types=1);
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License, version 3,
- * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ * along with this program. If not, see <http://www.gnu.org/licenses/>
  *
  */
 
@@ -243,7 +243,11 @@ class BirthdayService {
 		}
 
 		try {
-			$date = new \DateTime($birthday);
+			if ($birthday instanceof DateAndOrTime) {
+				$date = $birthday->getDateTime();
+			} else {
+				$date = new \DateTimeImmutable($birthday);
+			}
 		} catch (Exception $e) {
 			return null;
 		}
@@ -259,10 +263,13 @@ class BirthdayService {
 		);
 		$vEvent->DTSTART['VALUE'] = 'DATE';
 		$vEvent->add('DTEND');
-		$date->add(new \DateInterval('P1D'));
+
+		$dtEndDate = (new \DateTime())->setTimestamp($date->getTimeStamp());
+		$dtEndDate->add(new \DateInterval('P1D'));
 		$vEvent->DTEND->setDateTime(
-			$date
+			$dtEndDate
 		);
+
 		$vEvent->DTEND['VALUE'] = 'DATE';
 		$vEvent->{'UID'} = $doc->UID . $postfix;
 		$vEvent->{'RRULE'} = 'FREQ=YEARLY';
@@ -306,7 +313,7 @@ class BirthdayService {
 		foreach($books as $book) {
 			$cards = $this->cardDavBackEnd->getCards($book['id']);
 			foreach($cards as $card) {
-				$this->onCardChanged($book['id'], $card['uri'], $card['carddata']);
+				$this->onCardChanged((int) $book['id'], $card['uri'], $card['carddata']);
 			}
 		}
 	}

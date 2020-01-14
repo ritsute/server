@@ -36,6 +36,7 @@ OC.L10N.register(
     "<strong>All</strong> apps have an update for this version available" : "<strong>Sve</strong> aplikacije imaju dostupno ažuriranje za trenutnu inačicu",
     "View changelog" : "Prikaži zapis promjena",
     "Enterprise" : "Enterprise",
+    "For enterprise use. Provides always the latest patch level, but will not update to the next major release immediately. That update happens once Nextcloud GmbH has done additional hardening and testing for large-scale and mission-critical deployments. This channel is only available to customers and provides the Nextcloud Enterprise package." : "Samo za poslovnu primjenu. Uvijek obuhvaća najnoviju razinu zakrpe, ali neće se odmah ažurirati na sljedeće veliko izdanje ili verziju. Ažuriranje se izvršava nakon dodatnih ispitivanja i provjera koje provodi Nextcloud GmbH kako bi osigurao primjereno skaliranje u kritičnim primjenama. Ovaj je kanal dostupan samo kupcima i sadrži paket Nextcloud Enterprise.",
     "Stable" : "Stabilna",
     "The most recent stable version. It is suited for regular use and will always update to the latest major version." : "Najnovija stabilna inačica. Primjerena je za redovitu uporabu i uvijek će se ažurirati na najnoviju glavnu inačicu.",
     "Beta" : "Beta",
@@ -45,7 +46,6 @@ OC.L10N.register(
     "<strong>production</strong> will always provide the latest patch level, but not update to the next major release immediately. That update usually happens with the second minor release (x.0.2)." : "<strong>produkcija</strong> će uvijek osigurati najnoviju razinu zakrpe, ali neće odmah ažurirati na sljedeće glavno izdanje. To se ažuriranje obično događa s drugim manjim izdanjem (x.0.2).",
     "<strong>stable</strong> is the most recent stable version. It is suited for regular use and will always update to the latest major version." : "<strong>stabilna</strong> je najnovija stabilna inačica. Primjerena je za redovitu uporabu i uvijek će se ažurirati na najnoviju glavnu inačicu.",
     "<strong>beta</strong> is a pre-release version only for testing new features, not for production environments." : "<strong>beta</strong> je razvojna inačica koja služi samo za ispitivanje novih značajki, a nikako za produkcijska okruženja.",
-    "Could not start updater, please try the manual update" : "Ažuriranje nije moguće pokrenuti, pokušajte ručno ažurirati",
     "Production" : "Produkcija",
     "Will always provide the latest patch level, but not update to the next major release immediately. That update usually happens with the second minor release (x.0.2) and only if the instance is already on the latest minor version." : "Uvijek će osigurati najnoviju razinu zakrpe, ali neće odmah ažurirati na sljedeće glavno izdanje. To se ažuriranje obično događa s drugim manjim izdanjem (x.0.2) i samo ako je instanca već na posljednjoj manjoj inačici."
 },

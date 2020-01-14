@@ -12,6 +12,8 @@ OC.L10N.register(
     "Update notification" : "Notificación de actualización",
     "Displays update notifications for Nextcloud and provides the SSO for the updater." : "Despliega las notifiaciones de actualización para Nextcloud y provee el SSO para el actualizador.",
     "The version you are running is not maintained anymore. Please make sure to update to a supported version as soon as possible." : "La versión que estas corriendo ya no cuenta con mantenimiento. Por favor asegurate de actualizar a una versión soportada lo antes posible. ",
+    "Apps missing updates" : "Aplicaciones con actualizaciones faltantes",
+    "View in store" : "Ver en tienda",
     "Apps with available updates" : "Aplicaciones con actualizaciones disponibles",
     "Open updater" : "Abrir actualizador",
     "Download now" : "Descargar ahora",
@@ -33,7 +35,6 @@ OC.L10N.register(
     "_<strong>%n</strong> app has no update for this version available_::_<strong>%n</strong> apps have no update for this version available_" : ["<strong>%n</strong> aplicación no cuenta con una actualización para esta versión","<strong>%n</strong> aplicaciones no cuentan con una actualización para esta versión"],
     "You can always update to a newer version / experimental channel. But you can never downgrade to a more stable channel." : "Siempre puedes actualizar a una versión más reciente / canal experimental. Sin embargo nunca podrás desactualizar la versión a un canal más estable. ",
     "<strong>production</strong> will always provide the latest patch level, but not update to the next major release immediately. That update usually happens with the second minor release (x.0.2)." : "<strong>producción</strong> siempre contará el más reciente nivel de parches, pero no actualizará a la siguiente liberación mayor inmediatamente. Esta actualización siempre sucede en la segunda liberación menor (x.0.2)",
-    "<strong>beta</strong> is a pre-release version only for testing new features, not for production environments." : "<strong>beta</strong> es una versión de pre-liberación sólo para probar nuevas características, no para ambientes de producción. ",
-    "Could not start updater, please try the manual update" : "No fue posible iniciar el actualizador, por favor intenta la actualización manual"
+    "<strong>beta</strong> is a pre-release version only for testing new features, not for production environments." : "<strong>beta</strong> es una versión de pre-liberación sólo para probar nuevas características, no para ambientes de producción. "
 },
 "nplurals=2; plural=(n != 1);");

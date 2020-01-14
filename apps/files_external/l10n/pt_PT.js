@@ -19,6 +19,7 @@ OC.L10N.register(
     "Check for changes" : "Verificar se há alterações",
     "Never" : "Nunca",
     "Once every direct access" : "Uma vez em cada acesso direto",
+    "Read only" : "Apenas leitura",
     "Delete" : "Apagar",
     "Admin defined" : "Administrador definido",
     "Delete storage?" : "Apagar armazenamento?",
@@ -96,6 +97,7 @@ OC.L10N.register(
     "SFTP with secret key login" : "SFTP com login por chave secreta",
     "SMB / CIFS" : "SMB / CIFS",
     "Share" : "Compartilhar",
+    "Show hidden files" : "Mostrar ficheiros ocultos",
     "SMB / CIFS using OC login" : "SMB / CIFS utilizando o início de sessão OC",
     "Username as share" : "Nome de utilizador como partilha",
     "OpenStack Object Storage" : "Armazenamento de Objetos OpenStack",
@@ -107,6 +109,7 @@ OC.L10N.register(
     "Name" : "Nome",
     "Storage type" : "Tipo de Armazenamento",
     "Scope" : "Âmbito",
+    "Open documentation" : "Abrir documentação",
     "Folder name" : "Nome da pasta",
     "External storage" : "Armazenamento Externo",
     "Authentication" : "Autenticação",
@@ -114,8 +117,6 @@ OC.L10N.register(
     "Available for" : "Disponível para ",
     "Add storage" : "Adicionar armazenamento",
     "Advanced settings" : "Definições avançadas",
-    "Allow users to mount external storage" : "Permitir que os utilizadores montem armazenamento externo",
-    "Some of the configured external mount points are not connected. Please click on the red row(s) for more information" : "Alguns dos pontos de montagem externos configurados não estão conectados. Por favor, clique na fila vermelha para mais informação",
-    "\"%s\" is not installed. Mounting of %s is not possible. Please ask your system administrator to install it." : "\"%s\" não está instalado. Não é possível montar %s. Por favor peça ao seu administrador que o instale."
+    "Allow users to mount external storage" : "Permitir que os utilizadores montem armazenamento externo"
 },
 "nplurals=2; plural=(n != 1);");

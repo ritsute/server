@@ -19,6 +19,7 @@ OC.L10N.register(
     "Check for changes" : "ცვლილებების შემოწმება",
     "Never" : "არასდროს",
     "Once every direct access" : "ყოველთვის პირდაპირი წვდომისას",
+    "Read only" : "მხოლოდ-კითხვადი",
     "Delete" : "წაშლა",
     "Admin defined" : "განსაზღვრულია ადმინისტრატორის მიერ",
     "Delete storage?" : "გავაუქმოთ საცავი?",
@@ -98,6 +99,7 @@ OC.L10N.register(
     "SFTP with secret key login" : "SFTP საიდუმლო გასაღების ლოგინით",
     "SMB / CIFS" : "SMB / CIFS",
     "Share" : "გაზიარება",
+    "Show hidden files" : "დამალული ფაილების ჩვენება",
     "SMB / CIFS using OC login" : "SMB / CIFS OC ლოგინით",
     "Username as share" : "მომხმარებლის სახელი გაზიარებად",
     "OpenStack Object Storage" : "OpenStack ობიექტ საცავი",
@@ -110,6 +112,7 @@ OC.L10N.register(
     "Name" : "სახელი",
     "Storage type" : "საცავის სახეობა",
     "Scope" : "ფარგლები",
+    "Open documentation" : "ღია დოკუმენტაცია",
     "Folder name" : "დირექტორიის სახელი",
     "External storage" : "ექსტერნალური საცავი",
     "Authentication" : "აუტენტიფიკაცია",
@@ -118,8 +121,6 @@ OC.L10N.register(
     "Click to recheck the configuration" : "დააწკაპუნეთ კონფიგურაციის ხელახალი შემოწმებისთვის",
     "Add storage" : "საცავის დამატება",
     "Advanced settings" : "დამატებითი პარამეტრები",
-    "Allow users to mount external storage" : "მივცეთ მომხმარებლებს გარე საცავის მონტაჟის უფლება",
-    "Some of the configured external mount points are not connected. Please click on the red row(s) for more information" : "ზოგი კონფიგურირებული გარე მონტაჟის წერიტილი არაა დაკავშირებული. მეტი ინფორმაციისთვის გთხოვთ დააწკაპუნოთ წითელ რიგ(ებ)ს.",
-    "\"%s\" is not installed. Mounting of %s is not possible. Please ask your system administrator to install it." : "\"%s\" არაა დაყენებული. %s-ის მონტაჟი ვერ ხერხდება. გთხოვთ სთხოვოთ თქვენი სისტემის ადმინისტრატორს მისი დაყენება."
+    "Allow users to mount external storage" : "მივცეთ მომხმარებლებს გარე საცავის მონტაჟის უფლება"
 },
 "nplurals=2; plural=(n!=1);");

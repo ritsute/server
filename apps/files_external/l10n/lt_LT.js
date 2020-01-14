@@ -10,7 +10,7 @@ OC.L10N.register(
     "Error configuring OAuth2" : "Klaida, konfigūruojant OAuth2",
     "Generate keys" : "Generuoti raktus",
     "Error generating key pair" : "Klaida kuriant raktus",
-    "All users. Type to select user or group." : "Visi naudotojai. Pradėkite rašyti, jei norite pasirinkti konkretų naudotoją ar grupę.",
+    "All users. Type to select user or group." : "Visi naudotojai. Rašykite, norėdami pasirinkti naudotoją ar grupę.",
     "(group)" : "(grupė)",
     "Compatibility with Mac NFD encoding (slow)" : "Suderinamumas su Mac NFD kodavimu (lėtai)",
     "Enable encryption" : "Įjungti šifravimą",
@@ -109,10 +109,12 @@ OC.L10N.register(
     "Request timeout (seconds)" : "Prisijungimo laikas (sekundėmis)",
     "The cURL support in PHP is not enabled or installed. Mounting of %s is not possible. Please ask your system administrator to install it." : "cURL palaikymas yra neįjungtas arba neįdiegtas į PHP. %s prijungimas neįmanomas. Paprašykite sistemos administratoriaus pagalbos.",
     "The FTP support in PHP is not enabled or installed. Mounting of %s is not possible. Please ask your system administrator to install it." : "FTP palaikymas yra neįjungtas arba neįdiegtas į PHP. %s prijungimas neįmanomas. Paprašykite sistemos administratoriaus pagalbos.",
+    "External storage support" : "Išorinės saugyklos priežiūra",
     "No external storage configured or you don't have the permission to configure them" : "Nėra sukonfigūruota jokia išorinė saugykla arba jūs neturite leidimo jų konfigūruoti",
     "Name" : "Pavadinimas",
     "Storage type" : "Saugyklos tipas",
     "Scope" : "Leidimas",
+    "Open documentation" : "Atverti dokumentaciją",
     "Folder name" : "Aplanko pavadinimas",
     "External storage" : "Išorinė saugykla",
     "Authentication" : "Prisijungimas",
@@ -120,8 +122,6 @@ OC.L10N.register(
     "Available for" : "Prieinamas",
     "Add storage" : "Pridėti saugyklą",
     "Advanced settings" : "Išplėstiniai nustatymai",
-    "Allow users to mount external storage" : "Leisti naudotojams prijungti išorines saugyklas",
-    "Some of the configured external mount points are not connected. Please click on the red row(s) for more information" : "Kai kurios sukonfigūruotos išorinės saugyklos nebuvo prijungtos. Paspauskite ant raudonai nuspalvotų eilučių norėdami gauti išsamesnę informaciją",
-    "\"%s\" is not installed. Mounting of %s is not possible. Please ask your system administrator to install it." : "Nėra įdiegta \"%s\". %s prijungimas yra neįmanomas. Paprašykite savo sistemos administratoriaus, kad įdiegtų trūkstamą paketą."
+    "Allow users to mount external storage" : "Leisti naudotojams prijungti išorines saugyklas"
 },
 "nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);");

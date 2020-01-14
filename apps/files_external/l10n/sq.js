@@ -19,6 +19,7 @@ OC.L10N.register(
     "Check for changes" : "Kontrollo për ndryshime",
     "Never" : "Kurrë",
     "Once every direct access" : "Çdo herë pas hyrjesh të drejtpërdrejta",
+    "Read only" : "Vetëm i lexueshëm",
     "Delete" : "Fshije",
     "Admin defined" : "Përcaktuar nga përgjegjësi",
     "Saved" : "U ruajt",
@@ -94,6 +95,7 @@ OC.L10N.register(
     "SFTP with secret key login" : "SFTP me hyrje me kyç të fshehtë",
     "SMB / CIFS" : "SMB / CIFS",
     "Share" : "Ndajeni me të tjerët",
+    "Show hidden files" : "Shfaq skedarët e fshehur",
     "SMB / CIFS using OC login" : "SMB / CIFS me përdorim hyrjeje OC",
     "Username as share" : "Emër përdoruesi si emër ndarjeje",
     "OpenStack Object Storage" : "Depozitë OpenStack Object",
@@ -101,9 +103,11 @@ OC.L10N.register(
     "Request timeout (seconds)" : "Kohë skadimi kërkese (sekonda)",
     "The cURL support in PHP is not enabled or installed. Mounting of %s is not possible. Please ask your system administrator to install it." : "Mbështetja e cURL në PHP nuk është e instaluar ose e aktivizuar. Lidhja e %s nuk është e mundur. Ju lutemi kërkojini administratorin të sistemit tuaj që ta instaloj.",
     "The FTP support in PHP is not enabled or installed. Mounting of %s is not possible. Please ask your system administrator to install it." : "Mbështetja e FTP në PHP nuk është e aktivizuar ose instaluar.Lidhja e %s nuk është e mundur.Ju lutem kërkojini administratorit të sistemit tuaj që ta instalojë.",
+    "External storage support" : "Suport i kujtesë së jashtme",
     "Name" : "Emër",
     "Storage type" : "Lloj depozite",
     "Scope" : "Shtrirje",
+    "Open documentation" : "Dokumentacion i hapur",
     "Folder name" : "Emër dosjeje",
     "External storage" : "Depozitë e jashtme",
     "Authentication" : "Mirëfilltësim",
@@ -111,8 +115,6 @@ OC.L10N.register(
     "Available for" : "E gatshme për",
     "Add storage" : "Shtoni depozitë",
     "Advanced settings" : "Rregullime të mëtejshme",
-    "Allow users to mount external storage" : "Lejoju përdoruesve të montojnë depozita të jashtme",
-    "Some of the configured external mount points are not connected. Please click on the red row(s) for more information" : "Disa nga pikat e jashtme të formësuara të montimit s’janë të lidhura. Ju lutemi, klikoni në shigjetën(at) e kuqe për më tepër të dhëna",
-    "\"%s\" is not installed. Mounting of %s is not possible. Please ask your system administrator to install it." : "\"%s\" nuk është instaluar.Montimi i %s nuk është i mundur.Ju lutem kërkojini administratorit të sistemit tuaj ta instalojë."
+    "Allow users to mount external storage" : "Lejoju përdoruesve të montojnë depozita të jashtme"
 },
 "nplurals=2; plural=(n != 1);");

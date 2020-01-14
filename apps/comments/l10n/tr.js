@@ -15,12 +15,12 @@ OC.L10N.register(
     "Files app plugin to add comments to files" : "Dosyalara notlar eklenmesini sağlayan dosyalar uygulaması eki",
     "Edit comment" : "Yorumu düzenle",
     "Delete comment" : "Yorumu sil",
-    "New comment …" : "Yorum ekle ...",
+    "New comment …" : "Yorum ekle …",
     "Post" : "Gönder",
     "Cancel" : "İptal",
     "[Deleted user]" : "[Silinmiş kullanıcı]",
     "No comments yet, start the conversation!" : "Henüz bir yorum yapılmamış! Bir görüşme başlatın!",
-    "More comments …" : "Diğer yorumlar ...",
+    "More comments …" : "Diğer yorumlar …",
     "Save" : "Kaydet",
     "Allowed characters {count} of {max}" : "Yazılabilecek karakter sayısı {count}/{max}",
     "Error occurred while retrieving comment with ID {id}" : "{id} kodlu yorum alınırken sorun çıktı",
@@ -28,8 +28,6 @@ OC.L10N.register(
     "Error occurred while posting comment" : "Yorum gönderilirken sorun çıktı",
     "_%n unread comment_::_%n unread comments_" : ["%n okunmamış yorum","%n okunmamış yorum"],
     "_1 new comment_::_{unread} new comments_" : ["1 yeni yorum","{unread} yeni yorum"],
-    "Comment" : "Yorum",
-    "You were mentioned on “%s”, in a comment by a user that has since been deleted" : "\"%s\" hakkında bir yorumda silinmiş bir kullanıcı tarafından anıldınız",
-    "%1$s mentioned you in a comment on “%2$s”" : "%1$s, “%2$s” hakkındaki bir yorumda sizi andı"
+    "Comment" : "Yorum"
 },
 "nplurals=2; plural=(n > 1);");

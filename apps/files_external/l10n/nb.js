@@ -102,6 +102,8 @@ OC.L10N.register(
     "SFTP with secret key login" : "SFTP med hemmelig nøkkel for pålogging",
     "SMB / CIFS" : "SMB / CIFS",
     "Share" : "Delt ressurs",
+    "Show hidden files" : "Vis skjulte filer",
+    "Timeout" : "Tidsavbrudd",
     "SMB / CIFS using OC login" : "SMB / CIFS med OC-pålogging",
     "Username as share" : "Brukernavn som delt ressurs",
     "OpenStack Object Storage" : "OpenStack objektlager",
@@ -114,6 +116,7 @@ OC.L10N.register(
     "Name" : "Navn",
     "Storage type" : "Lagringstype",
     "Scope" : "Omfang",
+    "Open documentation" : "Åpne dokumentasjon",
     "Folder name" : "Mappenavn",
     "External storage" : "Ekstern lagring",
     "Authentication" : "Autentisering",
@@ -122,8 +125,6 @@ OC.L10N.register(
     "Click to recheck the configuration" : "Klikk for å sjekke oppsettet igjen",
     "Add storage" : "Legg til lagringsplass",
     "Advanced settings" : "Avanserte innstillinger",
-    "Allow users to mount external storage" : "Tillat at brukere kobler opp eksterne lagre",
-    "Some of the configured external mount points are not connected. Please click on the red row(s) for more information" : "Noen av de oppsatte eksterne oppkoblingspunktene er ikke tilkoblet. Klikk på de røde raden(e) for mer informasjon.",
-    "\"%s\" is not installed. Mounting of %s is not possible. Please ask your system administrator to install it." : "\"%s\" er ikke installert. Oppkobling av %s er ikke mulig. Spør din systemadministrator om å installere det."
+    "Allow users to mount external storage" : "Tillat at brukere kobler opp eksterne lagre"
 },
 "nplurals=2; plural=(n != 1);");
